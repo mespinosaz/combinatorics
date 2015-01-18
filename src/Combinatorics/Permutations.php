@@ -7,13 +7,18 @@ class Permutations implements \Iterator
     private $currentPosition = 0;
     private $permutations = array();
 
+    /**
+     * @param array $elements
+     */
     public function __construct(array $elements)
     {
         $this->computePermutations($elements);
     }
 
-    /*
+    /**
      * Extracted from O'Reilly PHP Cookbook chapter 4.26
+     * @param array $items
+     * @param array $permutation
      */
     private function computePermutations($items, $permutation = array())
     {
@@ -40,11 +45,17 @@ class Permutations implements \Iterator
         $this->currentPosition = 0;
     }
 
+    /**
+     * @return mixed
+     */
     public function current()
     {
         return $this->permutations[$this->currentPosition];
     }
 
+    /**
+     * @return int
+     */
     public function key()
     {
         return $this->currentPosition;
@@ -55,6 +66,9 @@ class Permutations implements \Iterator
         $this->currentPosition++;
     }
 
+    /**
+     * @return bool
+     */
     public function valid()
     {
         return isset($this->permutations[$this->currentPosition]);

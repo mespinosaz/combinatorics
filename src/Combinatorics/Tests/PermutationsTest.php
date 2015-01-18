@@ -10,7 +10,7 @@ class PermutationsTest extends \PHPUnit_Framework_TestCase
     {
         $permutations = new Permutations(array(1,2,3));
         $result = array();
-        foreach($permutations as $permutation) {
+        foreach ($permutations as $permutation) {
             $result[] = $permutation;
         }
         $expectedPermutations = array(
@@ -30,7 +30,7 @@ class PermutationsTest extends \PHPUnit_Framework_TestCase
         $permutations = new Permutations(array(1,1,1));
         $permutations->removeDuplicates();
         $result = array();
-        foreach($permutations as $permutation) {
+        foreach ($permutations as $permutation) {
             $result[] = $permutation;
         }
         $expectedPermutations = array(
