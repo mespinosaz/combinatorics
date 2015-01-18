@@ -24,4 +24,19 @@ class PermutationsTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($expectedPermutations, $result);
     }
+
+    public function testPermutationsSameNumber()
+    {
+        $permutations = new Permutations(array(1,1,1));
+        $permutations->removeDuplicates();
+        $result = array();
+        foreach($permutations as $permutation) {
+            $result[] = $permutation;
+        }
+        $expectedPermutations = array(
+            array(1,1,1)
+        );
+
+        $this->assertEquals($expectedPermutations, $result);
+    }
 }

@@ -30,6 +30,11 @@ class Permutations implements \Iterator
         }
     }
 
+    public function removeDuplicates()
+    {
+        $this->permutations = array_unique($this->permutations, SORT_REGULAR);
+    }
+
     public function rewind()
     {
         $this->currentPosition = 0;
